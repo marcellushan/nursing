@@ -6,13 +6,17 @@
                     RN/BSN Program
                     <br>Fall 2017
                 </h1>
-
-
-                <h2>The Nursing Program is competitive with a limited number of seats.</h2>
-                <h3>
-                    Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Curabitur aliquet quam id dui posuere blandit. Vivamus suscipit tortor eget felis porttitor volutpat. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta. Proin eget tortor risus. Curabitur non nulla sit amet nisl tempus
-                    convallis quis ac lectus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Cras ultricies ligula sed magna dictum porta. Pellentesque in ipsum id orci porta dapibus.
-                </h3>
+            <h3>All applicants must meet the following requirements to be considered for admission to the program:</h3>
+            <h4>
+                <ul>
+                    <li>A current valid RN license to practice nursing in the U.S. with no current disciplinary actions.
+                        If practicing as an RN for four years or more, must submit a completed Verification of Employment form.</li>
+                    <li> Graduated from an accredited nursing program: National League for Nursing Accrediting Commission (NLNAC),
+                        Accreditation Commission for Education in Nursing (ACEN), or Commission on Collegiate Nursing Education (CCNE).</li>
+                    <li>A minimum cumulative GPA of 2.5 on a 4.0 scale.</li>
+                    <li>All Sciences courses, English 1102, and Math 2200 must be complete with a grade of "C" or better.</li>
+                </ul>
+            </h4>
 
                 <form action="<?=base_url("home/display/create_applicant")?>" method="post" id="welcome">
 

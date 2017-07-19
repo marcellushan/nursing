@@ -32,6 +32,11 @@
 				<h3><input type="checkbox" name="active" value="1"></h3>
 			</div>
 		</div><!--row-->
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<h3>Please attach a copy of your license</h3>
+			</div>
+		</div><!--row-->
         <div class="row">
             <div class="col-md-3 col-md-offset-4"><input type="file" name="fileToUpload" id="license" accept="image/*" capture="camera" class="upload" onsubmit="return Validate(this);"></div>
         </div><!--row-->

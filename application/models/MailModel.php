@@ -28,9 +28,9 @@ class MailModel extends CI_Model {
         $this->email->initialize($config);
 
         $this->email->from('webmaster@highlands.edu', 'Georgia Highlands College');
-        $this->email->to('mhannah@highlands.edu');
+        $this->email->to('cjablons@highlands.edu');
 //        $this->email->to('bba@highlands.edu');
-//        $this->email->cc('mhannah@highlands.edu');
+        $this->email->cc('mhannah@highlands.edu');
         $body = "<h1>" . $first ." " . $last . "</h1>";
         $body = $body . "<h2>Has submitted an application to the Nursing Program at Georgia Highlands College.</h2>";
 //        $body = $body . "<h2>Your application has been received and you will be notified as soon as a decision is made.</h2>";

@@ -49,10 +49,10 @@ class Admin extends CI_Controller {
         ini_set('display_errors', '1');
         $this->load->model('ApplicantModel');
         $data['applicant'] = $this->ApplicantModel->load($id);
-//        if($data['applicant']->cpr_verified && $data['applicant']->identification_verified)
-//        {
-//            $data['verified']=1;
-//        }
+        if($data['applicant']->cpr_verified && $data['applicant']->identification_verified)
+        {
+            $data['verified']=1;
+        }
         $this->load->model('RaceModel');
         $data['race']= $this->RaceModel->load($data['applicant']->race);
         $this->load->model('EmployerModel');

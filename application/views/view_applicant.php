@@ -29,23 +29,17 @@
 				</div>
 			</div><!--row-->
 		 <div class="row">
-			 <div class="col-md-6">
 				 <? if($applicant->complete):?>
-					 <h3 class="col-md-11">Marked Complete by: <?=$applicant->complete_by ?></h3>
-					 <h3 class="col-md-11">Complete Date:  <?=date_format(date_create($applicant->complete_date), 'F d Y') ?></h3>
+			 		<div class="col-md-9 col-md-offset-2">
+					 <h3 class="col-md-11">Marked Complete by: <?=$applicant->complete_by ?> Complete Date:  <?=date_format(date_create($applicant->complete_date), 'F d Y') ?></h3>
 				 <? else:?>
+				 	<div class="col-md-6 col-md-offset-5">
 					 <div class="col-md-11"> <input type="button" class="btn btn-warning btn-lg"
-													onclick="window.location.href='<? echo base_url() ?>admin/update/complete/<?=$applicant->applicant_id ?>'" value="Mark Complete" <? echo (@$verified ? "" : "disabled") ?>></div>
+													onclick="window.location.href='<? echo base_url() ?>admin/update/complete/<?=$applicant->applicant_id ?>'"
+													value="Mark Complete" <? echo (@$verified ? "" : "disabled") ?>></div>
 				 <? endif;?>
 			 </div>
-			 <div class="col-md-6">
-				 <? if($applicant->funds):?>
-					 <h3 class="col-md-11">Funds Received by: <?=$applicant->funds_by ?></h3>
-					 <h3 class="col-md-11">Funds Received Date:  <?=date_format(date_create($applicant->funds_date), 'F d Y') ?></h3>
-				 <? else:?>
-					 <div class="col-md-11"> <input type="button" class="btn btn-success btn-lg" onclick="window.location.href='<? echo base_url() ?>admin/update/funds/<?=$applicant->applicant_id ?>'"value="Funds Received"></div>
-				 <? endif;?>
-			 </div>
+
 		 </div><!--row-->
 
 		<div class="section-border">
@@ -220,30 +214,42 @@
 				<div class="row">
 					<h4 class="col-md-6">How do you plan to attend?</h4>
 					<h4 class="item col-md-5"><? echo ($applicant->student_type ? "Full Time" : "Part Time"); ?></h4>
-					<h4 class="col-md-6">How do you plan to attend?</h4>
+					<h4 class="col-md-6">When do you plan to attend?</h4>
 					<h4 class="item col-md-5"><? if(! $applicant->semester) :?>
 							Not Provided
 						<? else: ?>
 							<? echo ($applicant->semester==2 ? "Spring" :($applicant->semester==1 ? "Summer" : "Fall")); ?>
 						<? endif; ?></h4>
-					<h4 class="col-md-12">How did you hear about us?</h4>
-					<h4 class="item col-md-12"><?=$applicant->hear ?></h4>
 				</div><!-- row -->
 			 </div>
 			 <div class="col-md-6">
 				 <h3>Demographics</h3>
+<!--				 <div class="row">-->
+<!--					 <h4 class="col-md-3">Race</h4>-->
+<!--					 <h4 class="item col-md-2">--><?//=@$race->race_text?><!--</h4>-->
+<!--					 <h4 class="col-md-3">Gender</h4>-->
+<!--					 <h4 class="item col-md-2">--><?// echo ($applicant->gender ? "Male" : "Female"); ?><!--</h4>-->
+<!--					 <h4 class="col-md-3">Latino</h4>-->
+<!--					 <h4 class="item col-md-2">--><?// echo ($applicant->latino ? "Yes" : "No"); ?><!--</h4>-->
+<!--					 <h4 class="col-md-3">Foreign</h4>-->
+<!--					 <h4 class="item col-md-2">--><?// echo ($applicant->foreign ? "Yes" : "No"); ?><!--</h4>-->
+<!--				 </div><!-- row -->
 				 <div class="row">
 					 <h4 class="col-md-3">Race</h4>
-					 <h4 class="item col-md-2"><?=@$race->race_text?></h4>
+					 <h4 class="item col-md-2"><? echo (@$race->race_text ? $race->race_text : 'Not Provided')?></h4>
 					 <h4 class="col-md-3">Gender</h4>
-					 <h4 class="item col-md-2"><? echo ($applicant->gender ? "Male" : "Female"); ?></h4>
+					 <h4 class="item col-md-2"><? echo (! @$applicant->gender ? 'Not Provided' : ($applicant->gender== 1 ? "Male" : "Female")); ?></h4>
 					 <h4 class="col-md-3">Latino</h4>
-					 <h4 class="item col-md-2"><? echo ($applicant->latino ? "Yes" : "No"); ?></h4>
+					 <h4 class="item col-md-2"><? echo (! @$applicant->latino ? 'Not Provided' : ($applicant->latino== 1 ? "Yes" : "No")); ?></h4>
 					 <h4 class="col-md-3">Foreign</h4>
-					 <h4 class="item col-md-2"><? echo ($applicant->foreign ? "Yes" : "No"); ?></h4>
+					 <h4 class="item col-md-2"><? echo (! @$applicant->foreign ? 'Not Provided' : ($applicant->foreign== 1 ? "Yes" : "No")); ?></h4>
 				 </div><!-- row -->
 			 </div>
 		 </div>
+			 <div class="row">
+				 <h4 class="col-md-4">How did you hear about us?</h4>
+				 <h4 class="item col-md-7"><?=$applicant->hear ?></h4>
+			 </div><!-- row -->
 
 
  </div><!-- main container -->
