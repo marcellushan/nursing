@@ -9,6 +9,7 @@ class AdminModel extends My_Model {
  	public $username;
  	public $first_name;
  	public $last_name;
+    public $password;
  		
 	public function verify($id)
     {
@@ -24,6 +25,16 @@ class AdminModel extends My_Model {
     {
 
         $this->db->where($id_name, $id);
+//    $this->db->where("password", $password);
+        $query = $this->db->get($this::DB_TABLE);
+        $row = $query->row();
+        return $data[$this::DB_TABLE] = $row;
+    }
+
+    public function get_password ($id_name, $id)
+    {
+
+        $this->db->where($id_name, password_verify($id));
 //    $this->db->where("password", $password);
         $query = $this->db->get($this::DB_TABLE);
         $row = $query->row();

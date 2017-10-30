@@ -12,7 +12,6 @@
 			<th>GHC ID</th>
 			<th>Submission Date</th>
 			<th>Complete Date</th>
-			<th>Fund Date</th>
 			<th></th>
 		</tr>
 	</thead>
@@ -23,7 +22,6 @@
 	 		<td><?=$applicant->GHC_ID?></td>
 			<td><?=$applicant->submit_date?></td>
 			<td><?=$applicant->complete_date?></td>
-			<td><?=$applicant->funds_date?></td>
 	 		<td><a href="<? echo base_url('/admin/get') ?>/<?=$applicant->applicant_id?>">View</a></td>
 	 	</tr>
 	 <?php endforeach;?>

@@ -74,6 +74,35 @@ class Admin extends CI_Controller {
         (@$_POST? $applicant=$this->ApplicantModel->update($id, $_POST):"");
         redirect(base_url('admin/get/' . $id));
     }
+
+    public function register()
+    {
+
+        $this->load->model('AdminModel');
+//        (@$_POST? $applicant=$this->ApplicantModel->update($id, $_POST):"");
+//        redirect(base_url('admin/get/' . $id));
+        $this->load->view('templates/header');
+        $this->load->view('create_admin');
+    }
+
+    public function save()
+    {
+        $this->load->model('AdminModel');
+        $admin = new AdminModel();
+
+
+        print_r($_POST);
+//        echo password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+        $admin->username = $_POST['username'];
+        $admin->password = $_POST['password'];
+        $admin->save();
+//        $this->load->model('AdminModel');
+////        (@$_POST? $applicant=$this->ApplicantModel->update($id, $_POST):"");
+        redirect(base_url('admin'));
+//        $this->load->view('templates/header');
+//        $this->load->view('create_admin');
+    }
 	
 	public function getrace()
 	{
@@ -149,6 +178,7 @@ class Admin extends CI_Controller {
         $this->load->model('AdminModel');
         $admin = new AdminModel();
         @$username= $admin->get_login('username', $_POST['username']);
+//        @$username= $admin->get_login('username', $_POST['username']);
         $password= $admin->get_login('password', $_POST['password']);
         if(@$username && @$password) {
             $_SESSION['username'] = $username->username;

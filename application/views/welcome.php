@@ -1,11 +1,14 @@
 <div class="main container">
     <div class="row">
-		<div class="col-sm-8  right-border">
-            <h1 class="wrapper">New Applicants</h1>
-                <h1 class="mytitle">Application for Admission<br>
-                    RN/BSN Program
-                    <br>Fall 2017
-                </h1>
+        <h1 class="col-md-12" align="center">
+            Welcome to the Georgia Highlands College <br>RN/BSN Online Application
+        </h1>
+
+        <div class="col-md-10 col-md-offset-1">
+            <h2 class="mytitle">Application for Admission<br>
+                RN/BSN Program
+                <br>Fall 2017
+            </h2>
             <h3>All applicants must meet the following requirements to be considered for admission to the program:</h3>
             <h4>
                 <ul>
@@ -17,33 +20,15 @@
                     <li>All Sciences courses, English 1102, and Math 2200 must be complete with a grade of "C" or better.</li>
                 </ul>
             </h4>
+        </div><!-- col-md-12 -->
+    </div><!--row-->
+    <div class="row">
+<div class="col-sm-4 col-sm-offset-2"><button type="button"class="btn btn-lg btn-success"
+                                                                               onclick="window.location.href='<?=base_url("home/display/create_applicant")?>'">New Applicants</button></div>
 
-                <form action="<?=base_url("home/display/create_applicant")?>" method="post" id="welcome">
+                    <div class="col-sm-4 col-sm-offset-2"><button type="button"class="btn btn-lg btn-success"
+                                                                  onclick="window.location.href='<?=base_url("home/login")?>'">Returning Applicants</button></div>
 
-            <div class="mytitle"><div class="col-sm-4 col-sm-offset-4"><button type="submit"class="btn btn-lg btn-success">Continue to Application</button></div></div>
-                </form>
-        </div><!--col-sm-6 -->
-        <div class="col-sm-4">
-                <h1 class="wrapper">Returning Applicants</h1>
-                <h3>Previous applicants login here to complete application or address issues</h3>
-            <br>
-            <h4>
-                <form action='<?=base_url("home/checkLogin")?>' method="post" id="login">
-                    <fieldset>
-                        <div class="row">
-                            <label class="col-md-5 col-sm-12">Email Address </label><input type="text"  class="col-md-5  col-sm-12" name="email">
-                        </div><!--row -->
-                        <div class="row">
-                            <label class="col-md-5 col-sm-12">Password</label>
-                            <input type="password"  class="col-md-5  col-sm-12" name="password" id="password" >
-                        </div><!--row -->
-                        <div class="row">
-                            <div class="col-sm-4 col-sm-offset-4"><button type="submit"class="btn btn-sm btn-success">Submit</button></div>
-
-                        </div>
-                    </fieldset>
-                </form>
-            </h4>
         </div><!--col-sm-6 -->
      </div><!--row -->
     </div><!-- container -->
